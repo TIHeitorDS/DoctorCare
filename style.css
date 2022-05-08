@@ -1,5 +1,3 @@
-/* ====================================   GENERAL   ==================================== */
-
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +15,7 @@
   --brand-dark: hsl(var(--hue), 100%, 14%);
   --bg-light: hsl(180, 14%, 97%);
   --nav-height: 7.2rem;
-  font-size: 62.5%; /* 1rem = 10px */
+  font-size: 62.5%;
 }
 
 html {
@@ -34,7 +32,7 @@ body {
   font-family: 'DM Sans', sans-serif;
   font-size: 1.6rem;
   text-align: center;
-  overflow: overlay; /*sobrepõe*/
+  overflow: overlay; 
   background-color: var(--bg-light);
 }
 
@@ -91,7 +89,7 @@ img {
   border-radius: 4rem;
   margin-bottom: 6rem;
   padding: 1.6rem 3.2rem;
-  width: fit-content; /*fit-content: adapta ao conteúdo*/
+  width: fit-content;
   color: #ffffff;
   text-transform: uppercase;
   font-size: 1.4rem;
@@ -115,8 +113,6 @@ img {
   gap: 3.2rem;
 }
 
-/* ====================================   CUSTOM COLORS   ==================================== */
-
 #services .card circle {
   fill: var(--brand-light);
 }
@@ -139,8 +135,6 @@ button.open-menu path[stroke*='#00856F'],
 #navigation.scroll button.open-menu path[stroke*='#00856F'] {
   stroke: #ffffff;
 }
-
-/* ====================================   NAVIGATION   ==================================== */
 
 nav {
   display: flex;
@@ -180,22 +174,19 @@ nav .close-menu {
   position: fixed;
 }
 
-/* ====================================   MENU-EXPANDED   ==================================== */
-
 body.menu-expanded {
-  overflow: hidden; /*tira o scroll*/
+  overflow: hidden; 
 }
 
 body.menu-expanded > :not(nav) {
-  /*:not() pseudo-class para quem não vao receber as propriedades*/
   visibility: hidden;
 }
 
 .menu,
 .close-menu,
 body.menu-expanded .open-menu {
-  opacity: 0; /*diminui a cor*/
-  visibility: hidden; /*não pode ser clicado*/
+  opacity: 0; 
+  visibility: hidden; 
 }
 
 body.menu-expanded .menu,
@@ -252,7 +243,7 @@ body.menu-expanded .menu {
 .menu .button:hover {
   background-color: var(--primary-color);
   color: #ffffff;
-  filter: brightness(1.1); /*filtro de luz*/
+  filter: brightness(1.1);
 }
 
 body.menu-expanded .logo,
@@ -269,11 +260,9 @@ body.menu-expanded button path {
   stroke: #ffffff;
 }
 
-/* ====================================   HOME   ==================================== */
-
 #home {
   padding-block: 0;
-  padding-top: calc(4.1rem + var(--nav-height)); /*calc() faz um calculo aut.*/
+  padding-top: calc(4.1rem + var(--nav-height));
 }
 
 #home::before {
@@ -341,8 +330,6 @@ body.menu-expanded button path {
   margin: 0;
 }
 
-/* ====================================   SERVICES   ==================================== */
-
 #services header h2 {
   margin-bottom: 6rem;
   font-size: 3.7rem;
@@ -366,8 +353,6 @@ body.menu-expanded button path {
   margin-block: 1.6rem;
 }
 
-/* ====================================   ABOUT   ==================================== */
-
 #about {
   text-align: left;
   background-color: var(--brand-beige);
@@ -380,8 +365,6 @@ body.menu-expanded button path {
 #about .content p {
   margin-block: 2.4rem 6rem;
 }
-
-/* ====================================   CONTACT   ==================================== */
 
 #contact {
   text-align: left;
@@ -404,8 +387,6 @@ body.menu-expanded button path {
   gap: 0.8rem;
 }
 
-/* ====================================   FOOTER   ==================================== */
-
 footer {
   background-color: var(--primary-color);
   padding-block: 6rem;
@@ -414,7 +395,6 @@ footer {
 }
 
 footer .logo {
-  /*display inline não margin top e bottom, width e height*/
   display: inline-block;
   margin-bottom: 2.4rem;
 }
@@ -438,8 +418,6 @@ footer .social-links {
   justify-content: flex-start;
 }
 
-/* ====================================   BACK TO TOP   ==================================== */
-
 #backToTopButton {
   position: fixed;
   bottom: 1rem;
@@ -456,10 +434,7 @@ footer .social-links {
   transform: translateY(0%);
 }
 
-/* ====================================   RESPONSIVO   ==================================== */
-
 @media (min-width: 1024px) {
-  /*====  GENERAL  ====*/
 
   body {
     overflow: auto;
@@ -486,9 +461,6 @@ footer .social-links {
     font-size: 4rem;
     line-height: 5.2rem;
   }
-
-  /*====  NAVIGATION  ====*/
-  /* reset */
 
   nav#navigation .wrapper * {
     margin: 0;
@@ -606,8 +578,6 @@ footer .social-links {
     border: none;
   }
 
-  /*====  HOME  ====*/
-
   #home::before {
     height: calc(96% - var(--nav-height));
   }
@@ -641,12 +611,12 @@ footer .social-links {
     gap: 0;
   }
 
-  #home .statistics .statistic + .statistic /*anterior*/ {
+  #home .statistics .statistic + .statistic {
     border-left: 1px solid var(--primary-color);
   }
 
   #home .statistics .statistic {
-    flex: 1; /*preenchimento automático*/
+    flex: 1; 
   }
 
   #home .button {
@@ -657,7 +627,6 @@ footer .social-links {
     width: 42rem;
   }
 
-  /*====  SERVICES  ====*/
 
   #services h2 {
     width: 47rem;
@@ -675,8 +644,6 @@ footer .social-links {
     flex-grow: 1;
   }
 
-  /*====  ABOUT  ====*/
-
   #about .wrapper {
     grid-template-columns: 48rem 1fr;
     grid-template-areas: 'B A';
@@ -691,8 +658,6 @@ footer .social-links {
     margin-bottom: 0;
   }
 
-  /*====  CONTACT  ====*/
-
   #contact .wrapper {
     grid-template-columns: 1fr 57.5rem;
     grid-template-areas: 'A B';
@@ -701,8 +666,6 @@ footer .social-links {
   #contact h2 {
     width: 40.4rem;
   }
-
-  /*====  FOOTER  ====*/
 
   footer {
     padding-block: 8rem;
